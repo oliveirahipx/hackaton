@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ceilândia Times</title>
+    <link rel="stylesheet" href="/css/index.css">
+    <script defer src="js/Front_index.js"></script> <!-- "defer" para garantir que o JS carregue após o DOM -->
+</head>
+<body>
+    <header>
+        <div class="headerMenu">
+            <img id="menuIcon" src='https://res.cloudinary.com/duslicdkg/image/upload/v1734114081/imagescei/Hamburger_Menu_nowhqr.png' alt="Abrir menu do site" />
+        </div>
+        <div class="headerMiddle">
+            <img src='https://res.cloudinary.com/duslicdkg/image/upload/v1734114082/imagescei/Header_soq1wl.png' alt="Cabeçalho da página">
+            <p class="timesItalic headerSlogan">O jornal digital dos ceilandenses!</p>
+        </div>
+        <div class="userMenu">
+            <a href="/Login">
+                <img src='https://res.cloudinary.com/duslicdkg/image/upload/v1734114083/imagescei/User_Top_ijurms.png' alt="Abrir menu do usuário">
+            </a>
+        </div>
+    </header>
+
+    <!-- Sidebar e Overlay -->
+    <div id="overlay" class="overlay"></div>
+    <div id="sidebar" class="sidebar">
+        <button id="closeSidebar" class="close-btn">&times;</button>
+        <nav>
+            <ul>
+                <li><a href="/noticias">Início</a></li>
+                <li><a href="/Perfil">Perfil</a></li>
+                <li><a href="#">Comunidade</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <main>
+        <div class="noticiasSection">
+            <header>
+                <img src='https://res.cloudinary.com/duslicdkg/image/upload/v1734114082/imagescei/NOTICIAS_nq6bk0.png' alt="Notícias!">
+                <p class="timesItalic">Os mais recentes acontecimentos na nossa cidade.</p>
+            </header>
+
+            <!-- Notícia 1 -->
+            <div class="newsPost newsPostBigPicture">
+                <div>
+                    <h3>Centro da cidade</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed egestas quam dui, a luctus velit condimentum sed. Maecenas eu dignissim tortor, tempus ullamcorper nisl. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+                </div>
+                <div class="imgContainer">
+                    <img src='https://res.cloudinary.com/duslicdkg/image/upload/v1734114086/imagescei/News_Image_1_zoppga.png' alt="Uma imagem do centro de Ceilândia.">
+                    <p>Foto na área central da cidade de Ceilândia.</p>
+                </div>
+            </div>
+
+            <!-- Notícia 2 -->
+            <div class="newsPost newsPostBigPicture">
+                <div>
+                    <h3>Casa do Cantador</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed egestas quam dui, a luctus velit condimentum sed. Maecenas eu dignissim tortor, tempus ullamcorper nisl. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+                </div>
+                <div class="imgContainer">
+                    <img src='https://res.cloudinary.com/duslicdkg/image/upload/v1734114082/imagescei/News_Image_2_o5syso.png' alt="Casa do Cantador, em Ceilândia.">
+                    <p>Casa do Cantador, em Ceilândia.</p>
+                </div>
+            </div>
+
+            <div class="buttonContainer">
+                <button id="seeMoreNews">Ver mais notícias</button>
+            </div>
+        </div>
+
+        <div class="comunidadeSection">
+            <header>
+                <img src="../media/POSTS DA COMUNIDADE.png" alt="Posts da Comunidade!">
+                <p class="timesItalic">As mensagens enviadas pela comunidade. <span class="clickableText">Envie uma também!</span></p>
+            </header>
+            <div class="orderPosts">
+                <p class="timesItalic">Filtrar posts por</p>
+                <select class="orderBySelect timesItalic" name="orderBy" id="orderBy">
+                  <option value="relevancia">relevância</option>
+                  <option value="recentes">recentes</option>
+                  <option value="antigos">antigos</option>
+                </select>
+                <p class="timesItalic">e mostrar</p>
+                <select class="orderBySelect timesItalic" name="postTagFilter" id="postTagFilter">
+                    <option value="todos">todos os tipos de post</option>
+                    <option value="geral">posts gerais</option>
+                    <option value="comercio">posts sobre comércio</option>
+                    <option value="escola">posts sobre escolas</option>
+                    <option value="governo">posts relacionados ao governo</option>
+                </select>
+            </div>
+        </div>
+        
+        <main class="postsDaComunidadeMain">
+            <div class="comunidadeSection">
+                <div class="userPost">
+                    <div class="userInfo">
+                        <div class="userImage">
+                            <img src="../media/User Image.png" alt="Entrar no perfil do usuário">
+                        </div>
+                        <div class="userInfoText">
+                            <p id="userName">Marcos Carvalho L.</p>
+                            <p id="postTime">há 1 hora</p>
+                        </div>
+                    </div>
+
+                    <div class="userPostBody">
+                        <div class="postReactions">
+                            <img src="../media/Like.png" alt="Gostei do post">
+                            <img src="../media/Comment.png" alt="Comentários do post" onclick="openCommentWindow(1)">
+                            <div class="commentsWindow" id="commentsWindow1">
+                                <img class="closeCommentsWindow" id="closeCommentsWindow1" src="../media/X.png" alt="Fechar comentários" onclick="closeCommentWindow(1)">
+                                <h3>Comentários</h3>
+                                <div class="commentBlock">
+                                    <div class="userInfo userInfoComment">
+                                        <div class="userImage">
+                                            <img src="../media/User Image.png" alt="Entrar no perfil do usuário">
+                                        </div>
+                                        <div class="userInfoText">
+                                            <p id="userName">Marcos Carvalho L.</p>
+                                            <p id="postTime">há 1 hora</p>
+                                        </div>
+                                    </div>
+                                    <div class="userPostBody">
+                                        <div class="postReactions">
+                                            <img src="../media/Like.png" alt="Gostei do post">
+                                        </div>
+                                        <div>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed egestas quam dui, a luctus velit condimentum sed.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="commentBlock">
+                                    <div class="userInfo userInfoComment">
+                                        <div class="userImage">
+                                            <img src="../media/User Image.png" alt="Entrar no perfil do usuário">
+                                        </div>
+                                        <div class="userInfoText">
+                                            <p id="userName">Marcos Carvalho L.</p>
+                                            <p id="postTime">há 1 hora</p>
+                                        </div>
+                                    </div>
+                                    <div class="userPostBody">
+                                        <div class="postReactions">
+                                            <img src="../media/Like.png" alt="Gostei do post">
+                                        </div>
+                                        <div>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed egestas quam dui, a luctus velit condimentum sed.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h3>Vendo hambúrgueres a menos de R$30,00!</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed egestas quam dui, a luctus velit condimentum sed. Maecenas eu dignissim tortor, tempus ullamcorper nisl. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestasa Phasellus quam arcu, bibendum non ipsum!</p>
+                            <div class="userPostTags">
+                                <span id="comercioTag">Comércio</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="userPost">
+                    <div class="userInfo">
+                        <div class="userImage">
+                            <img src="../media/User Image 2.png" alt="Entrar no perfil do usuário">
+                        </div>
+                        <div class="userInfoText">
+                            <p id="userName">Marcos Carvalho L.</p>
+                            <p id="postTime">há 1 hora</p>
+                        </div>
+                    </div>
+
+                    <div class="userPostBody">
+                        <div class="postReactions">
+                            <img src="../media/Like.png" alt="Gostei do post">
+                            <img src="../media/Comment.png" alt="Comentários do post" onclick="openCommentWindow(2)">
+                            <div class="commentsWindow" id="commentsWindow2">
+                                <img class="closeCommentsWindow" id="closeCommentsWindow2" src="../media/X.png" alt="Fechar comentários" onclick="closeCommentWindow(2)">
+                                <h3>Comentários</h3>
+                                <div class="commentBlock">
+                                    <div class="userInfo userInfoComment">
+                                        <div class="userImage">
+                                            <img src="../media/User Image.png" alt="Entrar no perfil do usuário">
+                                        </div>
+                                        <div class="userInfoText">
+                                            <p id="userName">Marcos Carvalho L.</p>
+                                            <p id="postTime">há 1 hora</p>
+                                        </div>
+                                    </div>
+                                    <div class="userPostBody">
+                                        <div class="postReactions">
+                                            <img src="../media/Like.png" alt="Gostei do post">
+                                        </div>
+                                        <div>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed egestas quam dui, a luctus velit condimentum sed.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="commentBlock">
+                                    <div class="userInfo userInfoComment">
+                                        <div class="userImage">
+                                            <img src="../media/User Image.png" alt="Entrar no perfil do usuário">
+                                        </div>
+                                        <div class="userInfoText">
+                                            <p id="userName">Marcos Carvalho L.</p>
+                                            <p id="postTime">há 1 hora</p>
+                                        </div>
+                                    </div>
+                                    <div class="userPostBody">
+                                        <div class="postReactions">
+                                            <img src="../media/Like.png" alt="Gostei do post">
+                                        </div>
+                                        <div>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed egestas quam dui, a luctus velit condimentum sed.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h3>Vendo hambúrgueres a menos de R$30,00!</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed egestas quam dui, a luctus velit condimentum sed. Maecenas eu dignissim tortor, tempus ullamcorper nisl. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestasa Phasellus quam arcu, bibendum non ipsum!</p>
+                            <div class="userPostTags">
+                                <span id="comercioTag">Comércio</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="userPost">
+                    <div class="userInfo">
+                        <div class="userImage">
+                            <img src="../media/User Image 3.png" alt="Entrar no perfil do usuário">
+                        </div>
+                        <div class="userInfoText">
+                            <p id="userName">Marcos Carvalho L.</p>
+                            <p id="postTime">há 1 hora</p>
+                        </div>
+                    </div>
+
+                    <div class="userPostBody">
+                        <div class="postReactions">
+                            <img src="../media/Like.png" alt="Gostei do post">
+                            <img src="../media/Comment.png" alt="Comentários do post" onclick="openCommentWindow(3)">
+                            <div class="commentsWindow" id="commentsWindow3">
+                                <img class="closeCommentsWindow" id="closeCommentsWindow3" src="../media/X.png" alt="Fechar comentários" onclick="closeCommentWindow(3)">
+                                <h3>Comentários</h3>
+                                <div class="commentBlock">
+                                    <div class="userInfo userInfoComment">
+                                        <div class="userImage">
+                                            <img src="../media/User Image.png" alt="Entrar no perfil do usuário">
+                                        </div>
+                                        <div class="userInfoText">
+                                            <p id="userName">Marcos Carvalho L.</p>
+                                            <p id="postTime">há 1 hora</p>
+                                        </div>
+                                    </div>
+                                    <div class="userPostBody">
+                                        <div class="postReactions">
+                                            <img src="../media/Like.png" alt="Gostei do post">
+                                        </div>
+                                        <div>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed egestas quam dui, a luctus velit condimentum sed.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="commentBlock">
+                                    <div class="userInfo userInfoComment">
+                                        <div class="userImage">
+                                            <img src="../media/User Image.png" alt="Entrar no perfil do usuário">
+                                        </div>
+                                        <div class="userInfoText">
+                                            <p id="userName">Marcos Carvalho L.</p>
+                                            <p id="postTime">há 1 hora</p>
+                                        </div>
+                                    </div>
+                                    <div class="userPostBody">
+                                        <div class="postReactions">
+                                            <img src="../media/Like.png" alt="Gostei do post">
+                                        </div>
+                                        <div>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed egestas quam dui, a luctus velit condimentum sed.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h3>Vendo hambúrgueres a menos de R$30,00!</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed egestas quam dui, a luctus velit condimentum sed. Maecenas eu dignissim tortor, tempus ullamcorper nisl. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestasa Phasellus quam arcu, bibendum non ipsum!</p>
+                            <div class="userPostTags">
+                                <span id="comercioTag">Comércio</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <div class="buttonContainer">
+                <button id="seeMoreCommunityPosts">Ver mais posts da comunidade</button>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

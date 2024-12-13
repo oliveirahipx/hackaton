@@ -1,0 +1,469 @@
+/* Font Import */
+@font-face {
+    font-family: 'OldNewspaperTypesRegular';
+    src: url('../font/oldnewspapertypes-webfont.eot');
+    src: url('../font/oldnewspapertypes-webfont.eot?#iefix') format('embedded-opentype'),
+        url('../font/oldnewspapertypes-webfont.woff2') format('woff2'),
+        url('../font/oldnewspapertypes-webfont.woff') format('woff'),
+        url('../font/oldnewspapertypes-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Global Code */
+.clickableText {
+    cursor: pointer;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-underline-offset: 3px;
+}
+
+/* General */
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('https://res.cloudinary.com/duslicdkg/image/upload/v1734114087/imagescei/BG2_afgcyy.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    margin: auto;
+    text-align: center;
+}
+header .userMenu, header .headerMenu {
+    cursor: pointer;
+    margin-bottom: 50px;
+    flex: 1;
+}
+.userMenu img {
+    display: inline-block;
+    width: 50px;
+}
+.headerMenu img {
+    display: inline-block;
+    width: 40px;
+}
+.headerMiddle img {
+    width: 70%;
+    flex: 2;
+}
+.timesItalic {
+    margin: 0;
+    font-size: 15px;
+    font-family: 'Times New Roman', serif;
+    font-style: italic;
+}
+.headerSlogan {
+    color: #390606;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 4%;
+    width: 50%;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.noticiasSection, .comunidadeSection {
+    flex: 1;
+}
+.noticiasSection header, .comunidadeSection header {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 60%;
+}
+.noticiasSection header img {
+    width: 100%;
+}
+.noticiasSection header p {
+    width: max-content;
+}
+
+.newsPost {
+    font-family: 'OldNewspaperTypesRegular';
+    font-size: 15px;
+    width: 100%;
+    margin-bottom: 30px;
+    text-align: center;
+}
+.newsPost .imgContainer {
+    position: relative;
+    padding: 4px 3px 0 3px;
+    border: 1px solid #390606;
+}
+.newsPost .imgContainer:before {
+    content:"";
+    display:block;
+    position:absolute;
+    z-index:1;
+    top:2px;
+    left:2px;
+    right:2px;
+    bottom:2px;
+    border:2px solid rgba(255, 255, 255, 0);
+}
+.newsPost .imgContainer p {
+    margin: 0 0 5px 0;
+}
+
+.newsPostBigPicture img, .newsPostSmallPicture img {
+    width: 100%;
+}
+.newsPostSmallPicture {
+    display: flex;
+    flex-direction: row;
+}
+.newsPostSmallPicture > p {
+    max-width: 55%;
+    margin: 0 0 0 15px;
+    text-align: left;
+}
+.newsPostSmallPicture .imgContainer {
+    width: 45%;
+    height: fit-content;
+}
+.newsPostSeparator div {
+    width: 70%;
+    height: 2px;
+    margin: auto;
+    margin-bottom: 30px;
+    border-radius: 2px;
+    background-color: #3906063a;
+}
+
+.middleSeparator div {
+    width: 2px;
+    height: 90vh;
+    margin: auto;
+    border-radius: 2px;
+    background-color: #3906063a;
+}
+
+.comunidadeSection header img {
+    width: 170%;
+}
+.comunidadeSection header p {
+    width: max-content;
+}
+.comunidadeSection .orderPosts {
+    width: 125%;
+    margin-top: 25px;
+}
+.orderPosts p {
+    display: inline;
+}
+.orderBySelect {
+    display: inline;
+    border: 1px dotted #390606;
+    background: none transparent;
+    text-align: center;
+}
+
+.userPost {
+    width: 100%;
+    margin-top: 40px;
+}
+
+.userInfo {
+    display: flex;
+    gap: 0px;
+    margin-top: 20px;
+}
+
+.userInfoText p {
+    margin: 0 0 5px -15px;
+}
+.userInfoText #userName {
+    font-family: 'OldNewspaperTypesRegular';
+    font-weight: 600;
+}
+.userInfoText #postTime {
+    font-weight: 1000;
+    color: #666666;
+}
+
+.userImage img {
+    width: 55%;
+    border: 2px solid #0000009a;
+}
+
+.userPostBody {
+    display: flex;
+    font-family: 'OldNewspaperTypesRegular';
+    font-size: 14px;
+    margin-top: 5px;
+}
+.userPostBody h3 {
+    margin: 0 0 15px 10px;
+    font-weight: 600;
+}
+.userPostBody p {
+    max-width: 100%;
+    margin: 0 0 0 12px;
+}
+.postReactions {
+    width: 50%;
+    height: fit-content;
+    margin: 0 16px 0 9px;
+    padding-bottom: 12px;
+    border: 1px solid #0000007a;
+    background-color: #00000036;
+    text-align: center;
+}
+.postReactions img {
+    display: block;
+    cursor: pointer;
+    width: 70%;
+    margin: auto;
+    margin-top: 12px;
+    filter: brightness(0.3);
+}
+.userPostContent .userSentImage {
+    position: relative;
+    width: 80%;
+    height: fit-content;
+    text-align: center;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin: 10px 0 20px 30px;
+    padding: 4px 3px 0 3px;
+    border: 1px solid #390606;
+}
+.userPostContent .userSentImage:before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    border: 2px solid rgba(255, 255, 255, 0);
+}
+.userPostContent .userSentImage img {
+    width: 100%;
+}
+
+.buttonContainer {
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: center;
+}
+#seeMoreNews, #seeMoreCommunity {
+    margin: auto;
+    font-family: 'OldNewspaperTypesRegular';
+    font-size: 16px;
+    background: none transparent;
+}
+
+/* Responsiveness */
+@media only screen and (max-width: 1200px) {
+    header {
+        width: 80%;
+    }
+
+    main {
+        width: 60%;
+    }
+
+    .postReactions {
+        width: 55%;
+        margin: 0 10px;
+    }
+    .postReactions img {
+        width: 25px;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    body > header {
+        display: block;
+        width: 90%;
+        margin: auto;
+        flex-direction: column;
+    }
+    body > header .userMenu {
+        display: none;
+    }
+    body > header .headerMenu {
+        margin-top: 20px;
+        margin-bottom: 15px;
+        margin-right: -40px;
+    }
+    .headerMiddle {
+        display: block !important;
+        flex: 10;
+        width: 110%;
+        margin: auto;
+        padding: 0;
+        text-align: center;
+    }
+    .headerMiddle img {
+        width: 100%;
+    }
+
+    .timesItalic {
+        font-size: 20px;
+    }
+
+    main {
+        width: 100%;
+        flex-direction: column;
+        gap: 30px;
+        padding: 20px;
+    }
+
+    .newsPostSmallPicture {
+        display: flex;
+        flex-direction: column;
+    }
+    .newsPostSmallPicture > p {
+        max-width: 100%;
+        margin: 0 0 0 15px;
+        text-align: center;
+    }
+    .newsPostSmallPicture .imgContainer {
+        width: 100%;
+        height: fit-content;
+        margin: 15px 0;
+    }
+
+    .middleSeparator div {
+        width: 60%;
+        height: 2px;
+    }
+
+    .comunidadeSection {
+        margin-top: 30px;
+    }
+    .comunidadeSection header img {
+        width: 150%;
+    }
+    .comunidadeSection header p {
+        width: 150%;
+    }
+    .comunidadeSection .orderPosts {
+        width: 100%;
+        margin-top: 25px;
+    }
+
+    .postReactions {
+        width: 7%;
+        margin: 0 20px 0 13px;
+        padding: 0 7px;
+    }
+    .postReactions img {
+        margin-top: 17px;
+        margin-bottom: 5px;
+    }
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -300px; /* Totalmente fora da tela */
+    width: 300px;
+    height: 100%;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease; /* Use transform para animações suaves */
+    z-index: 1000;
+    overflow-y: auto; /* Permite rolagem caso necessário */
+    transform: translateX(-100%); /* Move todo o sidebar para fora da tela */
+}
+
+.sidebar.active {
+    left: 0; /* Move o sidebar para a posição visível */
+    transform: translateX(0); /* Redefine o transform para mostrar o sidebar */
+}
+
+/* Botão de fechar */
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+/* Overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none; /* Escondido inicialmente */
+    z-index: 999;
+}
+
+.overlay.active {
+    display: block; /* Mostra o overlay */
+}
+
+/* Itens do Sidebar */
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    margin: 20px 0; /* Espaçamento entre os itens */
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    font-size: 18px; /* Tamanho da fonte */
+    color: white; /* Cor do texto */
+    padding: 10px 15px; /* Espaçamento interno */
+    display: block; /* Preenche a área clicável */
+    border-radius: 5px; /* Bordas arredondadas */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Animações suaves */
+}
+
+.sidebar ul li a:hover {
+    background-color: #555; /* Fundo ao passar o mouse */
+    color: #fff; /* Cor do texto ao passar o mouse */
+}
+
+/* Título do Sidebar */
+.sidebar h2 {
+    font-size: 24px; /* Tamanho maior para o título */
+    margin-bottom: 20px; /* Espaçamento abaixo do título */
+    color: #fff; /* Cor do texto */
+    border-bottom: 2px solid #555; /* Linha abaixo do título */
+    padding-bottom: 10px; /* Espaçamento interno no título */
+}
+
+/* Divisor opcional para categorias */
+.sidebar hr {
+    border: none;
+    border-top: 1px solid #555;
+    margin: 20px 0; /* Espaçamento ao redor do divisor */
+}
+
+/* Efeito geral no Sidebar */
+.sidebar {
+    background: linear-gradient(135deg, #444, #222); /* Degradê para fundo */
+    color: #fff; /* Cor padrão do texto */
+    font-family: 'Arial', sans-serif; /* Estilo de fonte */
+}

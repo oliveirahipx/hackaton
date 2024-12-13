@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil do Usuário</title>
+    <link rel="stylesheet" href="/css/perfil.css">
+</head>
+<body>
+    <header>
+        <h1>Perfil do Usuário</h1>
+    </header>
+    
+    <main>
+        <section class="profile">
+            <div class="profile-pic">
+                <img id="userImage" src="<%= usuario.imagemPerfil %>" alt="Imagem do Usuário">
+
+                <form id="updateProfileForm" action="/upload" method="POST" enctype="multipart/form-data">
+                    <label for="imagemPerfil">Upload da Imagem:</label>
+                    <input type="file" id="imagemPerfil" name="imagemPerfil">
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+            
+            <div class="profile-info">
+                <form id="updateProfileForm" action="/profile/update" method="POST">
+                    <label for="username">Nome:</label>
+                    <input type="text" id="username" name="username" value="<%= usuario.nome %>">
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" value="<%= usuario.email %>" disabled>
+
+                    <button type="submit">Salvar Alterações</button>
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
